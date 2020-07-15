@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+      <header class="text-gray-700 body-font">
+  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="{{ url_for('home')}}">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+      </svg>
+      <span class="ml-3 text-xl" >My Space</span>
+    </a>
+    <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+      <a class="mr-5 hover:text-gray-900" href="{{ url_for('getallbuilding')}}">Buildings</a>
+      <a class="mr-5 hover:text-gray-900" href="{{ url_for('add_building') }}">Add more building</a>
+      <a class="mr-5 hover:text-gray-900">Delete building</a>
+    </nav>
+  </div>
+</header>
+
+
+
+
+<section class="text-gray-700 body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-col text-center w-full mb-20">
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Total Buildings</h1>
+    </div>
+    
+    <div class="flex flex-wrap -m-4">
+    {% for it in values %}
+      <div class="lg:w-1/3 sm:w-1/2 p-4">
+        <div class="flex relative">
+          <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://source.unsplash.com/600x360/?{{ it.building_name }}">
+          <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+            <a class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1" href="/buildings/select_floor?id={{ it._id }}">Building {{ it._id }}</a>
+            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Shooting Stars {{ it._id }}</h1>
+            <p class="leading-relaxed">Total desks: {{ it.desks }}</p>
+            <p class="leading-relaxed">Total floors: {{ it.floors }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      
+      
+ 
+    </div>
+  </div>
+</section>
+
+
+
+
+</body>
+</html>
