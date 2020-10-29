@@ -197,8 +197,6 @@ def get_perticular_building():
 				
 		return redirect(url_for('getallbuilding'))
 
-		
-
 
 
 	#return jsonify(result=[B.serialize for B in result])
