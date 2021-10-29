@@ -1,8 +1,5 @@
 # BUILDING MANAGEMENT
 
-# Requirements
-# BUILDING MANAGEMENT
-
 ## Requirements
 (Important files)
 - pyhton 3.7
