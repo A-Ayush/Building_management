@@ -78,7 +78,7 @@ class Buildings(db.Model):
 		'title':'Building 2'
 	}
 ]'''
-#for testing in postman
+
 
 
 def update_building(id,building_name,total_floors,total_desks,taken):
