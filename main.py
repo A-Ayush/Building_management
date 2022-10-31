@@ -197,7 +197,8 @@ def get_perticular_building():
 				
 		return redirect(url_for('getallbuilding'))
 
-
+# Entry point for code
 if __name__ == "__main__":
 	db.create_all()
 	app.run()
+
